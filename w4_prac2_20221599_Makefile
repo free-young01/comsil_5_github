@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -g -Wall
+TARGET = animal_exe
+SRCS = main.c dog.c blackcow.c turtle.c
+OBJS = $(SRCS:.c=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+.PHONY: clean
+clean:
+	rm -f $(TARGET) $(OBJS)
